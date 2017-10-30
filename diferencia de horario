@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include"conio.h"
+using namespace std;
+int main(){
+	int h1,m1,s1,h2,m2,s2,t1,t2,t3,hf,mf,sf;
+	cout<<"ingrese hora1: "<<endl;
+	cin>>h1;
+	cout<<"ingrese minuto1: "<<endl;
+	cin>>m1;
+	cout<<"ingrese segundo1:"<<endl;
+	cin>>s1;
+	cout<<"ingresar hora2: "<<endl;
+	cin>>h2;
+	cout<<"ingrese minuto2: "<<endl;
+	cin>>m2;
+	cout<<"ingrese segundo2: "<<endl;
+	cin>>s2;
+	t1=h1*3600+m1*60+s1;
+	t2=h2*3600+m2*60+s2;
+	t3=t1-t2;
+	if(t3<0){
+		t3=t3*(-1);
+	}
+	else{
+		t3;
+	}
+	hf=t3/3600;
+	mf=(t3-hf*3600)/60;
+	sf=t3-(mf*60+hf*3600);
+	cout<<"la diferencia es: "<<hf<<":"<<mf<<":"<<sf<<endl;;
+
+getch();
+	return 0;
+}
