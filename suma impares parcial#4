@@ -1,0 +1,34 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+int sumaimpares (int n);
+
+using namespace std;
+
+void main()
+{
+	int n,s1=0,i=0,d;
+	do {
+		cout<<"ingrese un numero";
+		cin>>n;
+	} while (n<=0);
+	s1=sumaimpares(n);
+	cout<<"la suma de los digitos impares es:";
+	cout<<s1;
+	getch();	
+}
+
+int sumaimpares (int n)
+{
+	int s=0,i=0,d;
+	while (n>0){
+		d=n%10;
+		n=n/10;
+	   if (d%2!=0){
+		   s=s+d;
+	   }
+	   i=i+1;
+	}
+	return s;
+}
