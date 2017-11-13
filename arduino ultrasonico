@@ -1,0 +1,21 @@
+const int pinecho=9;
+const int pintrigger=8;
+unsigned int tiempo, distancia;
+
+void setup()  {
+  Serial.begin(9600);
+  pinMode(pinecho,INPUT);
+  pinMode(pintrigger,OUTPUT);
+}
+
+void loop() {
+  digitalWrite(pintrigger,LOW);
+  delayMicroseconds(2);
+  digitalWrite(pintrigger,HIGH);
+  delayMicroseconds(10); //El pulso dura 10 ms
+  tiempo=pulseIn(pinecho,HIGH);
+  distancia=tiempo / 58;
+  Serial.print(distancia); //Muestra en el monitor serial
+  Serial.println(" cm");
+  delay(200);
+}
